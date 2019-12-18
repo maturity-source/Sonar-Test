@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 /**
  * 
  */
@@ -7,9 +9,11 @@
  *
  */
 public class classTest {
-	
+	public class App 
+	{
+		
 
-	    public classTest() {
+	    public App() {
 			super();
 			// TODO Auto-generated constructor stub
 		}
@@ -31,7 +35,7 @@ public class classTest {
 
 		
 
-		public static void main( String[] args )
+		public void main( String[] args )
 		
 	    {
 	        System.out.println( "Hello World!" );
