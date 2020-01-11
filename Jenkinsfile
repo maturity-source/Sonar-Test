@@ -3,8 +3,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        echo 'build'
-        sh 'mvn clean'
+        git(url: 'https://github.com/maturity-source/Gitmaturity4.git', branch: 'master', poll: true)
       }
     }
 
