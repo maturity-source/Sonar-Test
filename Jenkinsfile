@@ -11,7 +11,7 @@ pipeline {
       parallel {
         stage('Backend') {
           steps {
-            sh '       '
+            echo 'backend'
           }
         }
 
@@ -25,20 +25,31 @@ pipeline {
     }
 
     stage('Frontend') {
-      steps {
-        sh 'frontend'
+      parallel {
+        stage('Frontend') {
+          steps {
+            sh 'frontend'
+          }
+        }
+
+        stage('') {
+          steps {
+            echo 'Frontend'
+          }
+        }
+
       }
     }
 
     stage('Stactic Analysis') {
       steps {
-        sh 'static'
+        fileExists 'pom.xml'
       }
     }
 
     stage('Deploiement') {
       steps {
-        sh 'deploiement'
+        git(url: 'https://github.com/maturity-source/Gitmaturity4.git', branch: 'master', poll: true)
       }
     }
 
