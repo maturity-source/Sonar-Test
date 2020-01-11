@@ -17,7 +17,7 @@ pipeline {
 
         stage('error') {
           steps {
-            sh 'unit'
+            sh 'mvn --version'
           }
         }
 
@@ -32,7 +32,7 @@ pipeline {
           }
         }
 
-        stage('') {
+        stage('error') {
           steps {
             echo 'Frontend'
           }
