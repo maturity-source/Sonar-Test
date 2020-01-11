@@ -60,8 +60,25 @@ pipeline {
     }
 
     stage('Deploiement') {
+      parallel {
+        stage('Deploiement') {
+          steps {
+            git(url: 'https://github.com/maturity-source/Gitmaturity4.git', branch: 'master', poll: true)
+          }
+        }
+
+        stage('') {
+          steps {
+            echo 'commencement'
+          }
+        }
+
+      }
+    }
+
+    stage('build1') {
       steps {
-        git(url: 'https://github.com/maturity-source/Gitmaturity4.git', branch: 'master', poll: true)
+        sh 'bat \'mvn version\''
       }
     }
 
