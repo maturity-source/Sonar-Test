@@ -30,6 +30,7 @@ pipeline {
         stage('Frontend') {
           steps {
             sh 'frontend'
+            pwd(tmp: true)
           }
         }
 
