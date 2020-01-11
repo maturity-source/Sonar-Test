@@ -43,8 +43,19 @@ pipeline {
     }
 
     stage('Stactic Analysis') {
-      steps {
-        fileExists 'pom.xml'
+      parallel {
+        stage('Stactic Analysis') {
+          steps {
+            fileExists 'pom.xml'
+          }
+        }
+
+        stage('') {
+          steps {
+            jacoco(buildOverBuild: true, changeBuildStatus: true, classPattern: '\'target/classes\'', minimumMethodCoverage: '80', minimumLineCoverage: '80', minimumInstructionCoverage: '80', minimumComplexityCoverage: '80', minimumClassCoverage: '80', minimumBranchCoverage: '70', maximumMethodCoverage: '100', maximumLineCoverage: '100', maximumComplexityCoverage: '100', maximumClassCoverage: '100', maximumBranchCoverage: '100')
+          }
+        }
+
       }
     }
 
