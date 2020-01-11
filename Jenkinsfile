@@ -18,7 +18,7 @@ pipeline {
         stage('error') {
           agent any
           steps {
-            sh 'mvn --version'
+            readFile 'pom.xml'
           }
         }
 
