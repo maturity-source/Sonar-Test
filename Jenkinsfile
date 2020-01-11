@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        git(url: 'https://github.com/maturity-source/Gitmaturity4.git', branch: 'master', poll: true)
+        git(url: 'https://github.com/maturity-source/GitMaturity1.git', branch: 'master')
       }
     }
 
