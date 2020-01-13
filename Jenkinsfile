@@ -77,8 +77,26 @@ pipeline {
     }
 
     stage('build1') {
-      steps {
-        sh 'bat \'mvn version\''
+      parallel {
+        stage('build1') {
+          steps {
+            sh 'bat \'mvn version\''
+            git(url: 'https://github.com/maturity-source/GitMaturity.git', branch: 'master')
+          }
+        }
+
+        stage('build 2') {
+          steps {
+            git(url: 'https://github.com/maturity-source/Sonar-Test.git', branch: 'master')
+          }
+        }
+
+        stage('') {
+          steps {
+            git(url: 'https://github.com/maturity-source/GitMaturity2.git', branch: 'master')
+          }
+        }
+
       }
     }
 
