@@ -87,7 +87,7 @@ pipeline {
 
         stage('build 2') {
           steps {
-            git(url: 'https://github.com/maturity-source/GitMaturity2.git', branch: 'MatB1')
+            git(url: 'https://github.com/maturity-source/GitMaturity2.git', branch: 'master')
           }
         }
 
