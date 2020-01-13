@@ -80,7 +80,6 @@ pipeline {
       parallel {
         stage('build1') {
           steps {
-            sh 'bat \'mvn version\''
             git(url: 'https://github.com/maturity-source/GitMaturity.git', branch: 'master')
           }
         }
