@@ -78,7 +78,7 @@ pipeline {
 
     stage('build') {
       steps {
-        sh ''' #!/bin/sh
+        sh ''' #!/bin/bat
       echo "Hello World"'''
       }
     }
