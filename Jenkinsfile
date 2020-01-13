@@ -76,5 +76,11 @@ pipeline {
       }
     }
 
+    stage('essai') {
+      steps {
+        git(url: 'https://github.com/maturity-source/Sonar-Test.git', branch: 'all')
+      }
+    }
+
   }
 }
