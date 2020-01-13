@@ -78,8 +78,7 @@ pipeline {
 
     stage('build') {
       steps {
-        git(url: 'https://github.com/maturity-source/Gitmaturity4.git', branch: 'master')
-        sh 'jenkins/build.bat'
+        sh 'jenkins/test.sh'
       }
     }
 
