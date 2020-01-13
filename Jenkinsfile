@@ -87,11 +87,11 @@ pipeline {
 
         stage('build 2') {
           steps {
-            git(url: 'https://github.com/maturity-source/Sonar-Test.git', branch: 'master')
+            git(url: 'https://github.com/maturity-source/GitMaturity2.git', branch: 'MatB1')
           }
         }
 
-        stage('') {
+        stage('error') {
           steps {
             git(url: 'https://github.com/maturity-source/GitMaturity2.git', branch: 'master')
           }
