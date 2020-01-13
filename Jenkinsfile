@@ -76,22 +76,5 @@ pipeline {
       }
     }
 
-    stage('build1') {
-      parallel {
-        stage('build1') {
-          steps {
-            git(url: 'https://github.com/maturity-source/GitMaturity.git', branch: 'master')
-          }
-        }
-
-        stage('build 2') {
-          steps {
-            git(url: 'https://github.com/maturity-source/GitMaturity.git', branch: 'master', poll: true, changelog: true)
-          }
-        }
-
-      }
-    }
-
   }
 }
