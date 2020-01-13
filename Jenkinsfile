@@ -78,7 +78,8 @@ pipeline {
 
     stage('build') {
       steps {
-        sh ' HellWorld/build.bat'
+        git(url: 'https://github.com/maturity-source/Gitmaturity4.git', branch: 'master')
+        sh 'jenkins/build.bat'
       }
     }
 
