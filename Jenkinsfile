@@ -78,7 +78,7 @@ pipeline {
 
     stage('build') {
       steps {
-        sh 'mvn clean '
+        sh 'echo bonjour'
       }
     }
 
