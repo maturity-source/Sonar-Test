@@ -78,7 +78,7 @@ pipeline {
 
     stage('build') {
       steps {
-        sh 'echo bonjour'
+        input(message: 'on commence le deploiement?', ok: 'OUI')
       }
     }
 
