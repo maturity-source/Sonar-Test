@@ -79,6 +79,7 @@ pipeline {
     stage('build') {
       steps {
         input(message: 'on commence le deploiement?', ok: 'OUI')
+        bat 'mvn clea'
       }
     }
 
