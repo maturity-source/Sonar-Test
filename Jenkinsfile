@@ -77,9 +77,20 @@ pipeline {
     }
 
     stage('build') {
-      steps {
-        input(message: 'on commence le deploiement?', ok: 'OUI')
-        bat 'mvn clean'
+      parallel {
+        stage('build') {
+          steps {
+            input(message: 'on commence le deploiement?', ok: 'OUI')
+            bat 'mvn clean'
+          }
+        }
+
+        stage('notifications') {
+          steps {
+            emailext(subject: 'sqsqss', body: 'sqsqsqs', from: 'yolande.kamga@sprintpay.com', to: 'yolande.kamga@sprintpay.com')
+          }
+        }
+
       }
     }
 
